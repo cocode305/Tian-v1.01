@@ -1,0 +1,360 @@
+@import url('./assets/fonts/Anton/Anton-Regular.ttf');
+@import url('./assets/fonts/Figtree/static/Figtree-Black.ttf');
+@import url('./assets/fonts/Poppins/Poppins-SemiBold.ttf');
+
+:root {
+    /* BACKGROUND COLORS */
+    --base: #292929;
+    --base-primary-100: #E9DFFC;
+    --base-primary-400: #737373;
+    --accent: #292929;
+    --accent-primary-100: #BE9FF6;
+    --accent-primary-300: #A87FF3;
+    --primary: #FFFFFF;
+    --secondary: #000000;
+
+    /* TEXT COLORS */
+    --txt-base: #292929;
+    --txt-primary: #FFFFFF;
+    --txt-secondary: #000000;
+    --txt-accent-primary-900: #784DC7;
+
+    /* UI COLORS */
+    --btn-bg: #292929;
+    --socials-bg: #E6E6E6;
+    --btn-secondary: #784DC7;
+}
+
+.darkmode {
+    /* BACKGROUND COLORS */
+    --base: #FFFFFF;
+    --primary: #000000;
+    --secondary: #FFFFFF;
+
+    /* TEXT COLORS */
+    --txt-base: #FFFFFF;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Figtree", sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 400;
+    background: var(--primary);
+    /* background: #000; */
+    color: var(--txt-base)
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Anton", sans-serif;
+    font-weight: 900;
+    color: var(--txt-base);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--txt-base);
+}
+
+img {
+    width: 100%;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+}
+
+.btn-theme {
+    background: var(--btn-bg);
+    color: var(--txt-primary);
+    transition: all ease .3s;
+}
+
+.btn-theme:hover {
+    background: var(--btn-secondary);
+}
+
+.wrapper {
+    padding: 20px;
+}
+
+/* NAV SECTION */
+.mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-icon path {
+    fill: var(--base);
+}
+
+.menu-btn {
+    font-size: 1.5rem;
+    background: transparent;
+}
+
+
+/* NAV LIST */
+.nav-list {
+    display: none;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* THEME CONTAINER */
+.theme {
+    display: none;
+}
+
+/* HERO SECTION */
+.hero-content {
+    margin: 40px auto 0;
+    width: clamp(320px, 64vw, 660px);
+    /* max-width: 660px; */
+}
+
+.hero-heading {
+    font-size: clamp(6rem, 19vw, 12.5rem);
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    line-height: 90%;
+    text-align: center;
+}
+
+.designer-name {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.social-media {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-media-links {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--socials-bg);
+    border-radius: 10px;
+}
+
+.social-icons {
+    width: 100%;
+}
+
+.social-icons path {
+    fill: var(--secondary);
+}
+
+.linkedin .linkedin-pathB {
+    fill: var(--primary);
+}
+
+.hero-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 52px;
+    margin-top: 25px;
+    padding: 16px 24px 16px 32px;
+    font-size: 0.875rem;
+}
+.d-arrow-icon {
+    width: 28px;
+}
+
+.portal, .hero-img {
+    display: none;
+}
+
+@media screen and (min-width: 428px) {
+    .wrapper {
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .wrapper {
+        padding: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        padding: 50px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        padding: 50px 100px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-nav {
+        justify-content: space-between;
+    }
+
+    .nav-list {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-left: 90px;
+    }
+
+    .nav-links {
+        font-size: 1.25rem;
+    }
+
+    .mobile-contact-btn {
+        display: none;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .theme {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .theme-toggle {
+        position: relative;
+        width: 56px;
+        height: 32px;
+    }
+
+    .toggle-checkbox {
+        display: none;
+    }
+
+    .toggle-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px;
+        border-radius: 50px;
+        position: relative;
+        cursor: pointer;
+        transition: background 0.3s;
+        background: var(--base);
+    }
+
+    .toggle-ball {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 2px;
+        right: 3px;
+        background: #FFFFFF;
+        border-radius: 50%;
+        transition: transform 0.3s, background .3s;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    }
+
+    .toggle-checkbox:checked + .toggle-label {
+        background: #ffec70;
+        box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .toggle-checkbox:checked + .toggle-label .toggle-ball {
+        transform: translateX(-23px);
+    }
+
+    .hero {
+        margin-top: 100px;
+    }
+
+    .social-media-links {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .wrapper {
+        padding: 50px;
+    }
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+    }
+
+    .hero-content {
+        display: flex;
+        width: clamp(450px, 63vw, 820px );
+        margin: 41px 0;
+    }
+
+    .hero-heading {
+        text-align: left;
+        font-size: clamp(6rem, 12vw, 12.5rem)
+    }
+
+    .designer-name {
+        margin: 0;
+    }
+
+    .portal, .hero-img {
+        display: block;
+    }
+
+    .portal-icon path {
+        fill: var(--accent);
+    }
+
+    .hero-img {
+        width: clamp(500px, 45vw, 693px);
+        height: clamp (650px, 30vw, 777px);
+    }
+
+    .hero-img img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+}
+
+@media screen and (min-width: 1536px) {
+    .wrapper {
+        width: 1528px;
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+}
