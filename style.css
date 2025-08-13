@@ -75,7 +75,7 @@ a {
     color: var(--txt-base);
 }
 
-img {
+img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -90,10 +90,6 @@ img {
     background: var(--btn-bg);
     color: var(--txt-primary);
     transition: all ease .3s;
-}
-
-.btn-theme:hover {
-    background: var(--btn-secondary);
 }
 
 .wrapper {
@@ -137,11 +133,11 @@ img {
 /* HERO SECTION */
 .hero-content {
     margin: 40px auto 0;
-    width: clamp(320px, 64vw, 660px);
+    width: clamp(280px, 64vw, 660px);
 }
 
 .hero-heading {
-    font-size: clamp(6rem, 19vw, 12.5rem);
+    font-size: clamp(4rem, 19vw, 12.5rem);
     letter-spacing: -3px;
     text-transform: uppercase;
     line-height: 90%;
@@ -188,7 +184,6 @@ img {
     justify-content: center;
     gap: 8px;
     width: 100%;
-    height: 52px;
     margin-top: 25px;
     padding: 16px 24px 16px 32px;
     font-size: 0.875rem;
@@ -219,13 +214,13 @@ img {
 }
 
 .stats-contents h2 {
-    font-size: 6rem;
+    font-size: clamp(3rem, 20vw, 6rem);
     text-align: center;
     color: var(--txt-accent-secondary);
 }
 
 .stats-contents h3 {
-    font-size: 2.25rem;
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
     text-transform: capitalize;
     text-align: center;
     color: var(--txt-accent-secondary);
@@ -241,7 +236,7 @@ img {
 }
 
 .portfolio h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 0px;
 }
@@ -321,7 +316,7 @@ img {
 }
 
 .skills-contents h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-transform: uppercase;
 }
 
@@ -413,6 +408,7 @@ body.darkmode .testimonial {
 }
 
 .testimonial h4 {
+    font-size: clamp(1.25rem, 3vw, 3rem);
     margin-top: 60px;
 }
 
@@ -421,10 +417,186 @@ body.darkmode .testimonial {
     margin: 60px auto 0;
     width: 72px;
 }
+/* END OF TESTIMONIAL SECTION */
+
+.aboutMe-contents {
+    margin-top: clamp(50px, 10vw, 200px);
+}
+
+.aboutMe-contents .heading {
+    display: flex;
+    align-items: center;
+    gap: 30px
+}
+
+.heading h3 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.zigzag-icon {
+    display: none;
+} 
+
+.zigzag-icon path {
+    stroke: var(--accent);
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.reverse-desc {
+    flex-direction: column-reverse;
+}
+.description .right {
+    position: relative;
+}
+
+.desc-heading {
+    font-size: clamp(1rem, 3vw, 2rem);
+    letter-spacing: -1px;
+    color: var(--txt-base);
+    margin-top: 50px;
+}
+
+.gradient-txt-color {
+    background: #FA709A;
+    background: linear-gradient(to right, #FA709A 0%, #FEE140 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.passion-gradient-color {
+    background: #84FAB0;
+    background: linear-gradient(to right, #84FAB0 0%, #8FD3F4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.name-gradient-color {
+    background: #E0C3FC;
+    background: linear-gradient(to right, #E0C3FC 0%, #8EC5FC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.country-gradient-color {
+    background: #FFE76A;
+    background: linear-gradient(to right, #FFE76A 20%, #65C8FF 23%, #65C8FF 50%, #65C8FF 72%, #FF0000 72%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.desc-img {
+    position: relative;
+}
+
+.wave-icon {
+    width: 50px;
+    height: 51px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    object-fit: cover;
+}
+/* END OF ABOUT ME SECTION */
+
+footer {
+    background: var(--base);
+    margin-top: clamp(150px, 20vw, 335px);
+    position: relative;
+    padding-bottom: 47px;
+}
+
+.acknowledgement {
+    background: var(--accent-primary-300);
+    color: var(--txt-primary);
+    border-radius: 0.5rem;
+    min-height: clamp(112px, 20vw, 180px);
+    position: relative;
+    top: -80px;
+}
+
+.acknowledgement-contents {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    height: 100%;
+}
+
+.acknowledgement-txt {
+    font-size: clamp(0.5rem, 2.5vw, 1rem);
+    width: 70%;
+    line-height: 1.4;
+    padding: 2rem 1rem;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+}
+
+.footer-img {
+    width: clamp(135px, 20vw, 280px);
+    margin-left: -10px;
+    -webkit-user-drag: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.footer-icon {
+    position: absolute;
+    -webkit-user-drag: none;
+    width: clamp(82px, 20vw, 150px);
+    height: clamp(69px, 15vw, 125px);
+    
+}
+.footer-bg-icon-bottomLeft {
+    display: none;
+    bottom: 0;
+    left: 0;
+}
+.footer-bg-icon-topRight {
+    top: 0;
+    right: 0;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+}
+
+.footer-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-navLinks {
+    color: #FFFFFF;
+    font-size: clamp(0.75rem, 3vw, 1.25rem);
+}
+
 /* MEDIA QUARIES */
 @media screen and (min-width: 428px) {
     .wrapper {
         padding: 30px;
+    }
+
+    .acknowledgement {
+        top: -100px;
     }
 }
 
@@ -447,7 +619,11 @@ body.darkmode .testimonial {
 
 @media screen and (min-width: 1024px) {
     .wrapper {
-        padding: 50px 80px;
+        padding: 50px;
+    }
+
+    .btn-theme:hover {
+        background: var(--btn-secondary);
     }
 
     nav {
@@ -569,6 +745,53 @@ body.darkmode .testimonial {
         flex: 1 1 calc(50% - 20px);
         text-align: left;
     }
+    /* END OF SKILLS SECTION */
+
+    .description {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .description .left, .description .right {
+        flex: 1 1 50%;
+        max-width: 50%;
+    }
+
+    .zigzag-icon {
+        display: inline-block;
+        flex: 1 1 calc(50% - 30px);
+        max-width: calc(50% - 30px)
+    }
+
+    .about-skills {
+        margin: 106px 72px 48px 0px;
+    }
+    .about-passion {
+        margin: 136px 0px 135px 40px;
+    }
+    .about-author {
+        margin: 99px 70px 99px 0px;
+    }
+
+    .acknowledgement-txt {
+        width: 80%;
+    }
+
+    .footer-bg-icon-bottomLeft {
+        display: block;
+    }
+
+    .footer-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-nav ul {
+        gap: 30px;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -651,6 +874,18 @@ body.darkmode .testimonial {
         flex: 1 1 calc(50% - 20px);
         max-width: calc(50% - 20px);
     }
+    /* END OF SKILLS SECTION */
+
+    .about-skills {
+        margin: 76px 129px 66px 0px;
+    }
+    .about-passion {
+        margin: 176px 0px 175px 82px;
+    }
+    .about-author {
+        margin: 168px 129px 0px 0px;
+    }
+    /* END OF ABOUT ME SECTION */
 }
 
 @media screen and (min-width: 1536px) {
