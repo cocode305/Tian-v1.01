@@ -81,6 +81,43 @@ if (desktopToggle) {
   });
 }
 
+// Close navigation menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav-links');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (menuIcon.classList.contains("fa-xmark")) {
+      menuIcon.classList.replace("fa-xmark", "fa-bars");
+      navList.style.right = "-100%"; // hide menu
+      navList.style.opacity = 0;
+      document.body.style.overflow = ""; // Enable scrolling
+    }
+  });
+});
+
+// Ensure the theme toggle reflects the saved preference on page load
+if (mobileToggle) {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    mobileToggle.checked = savedTheme === 'dark';
+    toggleTheme(savedTheme === 'dark');
+  } else {
+    // Default to light mode if no preference is saved
+    mobileToggle.checked = false;
+    toggleTheme(false);
+  }
+}
+if (desktopToggle) {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    desktopToggle.checked = savedTheme === 'dark';
+    toggleTheme(savedTheme === 'dark');
+  } else {
+    // Default to light mode if no preference is saved
+    desktopToggle.checked = false;
+    toggleTheme(false);
+  }
+}
+
 //Theme setup based on system preference
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
