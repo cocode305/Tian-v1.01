@@ -4,20 +4,20 @@
 
 :root {
     /* BACKGROUND COLORS */
-    --base: #292929;
-    --base-primary: #FFFFFF;
+    --base: #292929; /* Change on darkmode */
+    --base-primary: #FFFFFF; /* Change on darkmode */
     --base-primary-100: #E9DFFC;
-    --base-secondary: #000000;
+    --base-secondary: #000000; /* Change on darkmode */
     --accent: #292929;
     --accent-primary-100: #BE9FF6;
     --accent-primary-300: #A87FF3;
     --accent-secondary-100: #F6FFF6;
     --accent-secondary-900: #64C661;
-    --primary: #FFFFFF;
-    --secondary: #000000;
+    --primary: #FFFFFF; /* Change on darkmode */
+    --secondary: #000000; /* Change on darkmode */
 
     /* TEXT COLORS */
-    --txt-base: #292929;
+    --txt-base: #292929; /* Change on darkmode */
     --txt-primary: #FFFFFF;
     --txt-accent-secondary: #64C661;
     --txt-secondary: #000000;
@@ -35,6 +35,7 @@
     --primary: #000000;
     --secondary: #FFFFFF;
     --base-primary: #0B0B0B;
+    --base-primary-100: #0b0b0b;
     --base-secondary: #737373;
 
     /* TEXT COLORS */
@@ -54,7 +55,6 @@ body {
     font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: 400;
     background: var(--primary);
-    /* background: #000; */
     color: var(--txt-base)
 }
 
@@ -117,7 +117,7 @@ header {
     z-index: 1000;
     padding: 0 30px;
     box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.4);
-    background: #ffffff;
+    background: var(--base-primary);
 }
 
 .logo-icon path {
@@ -125,8 +125,9 @@ header {
 }
 
 .menu-btn {
-    font-size: 1.5rem;
+    font-size: 2rem;
     background: transparent;
+    color: var(--base)
 }
 
 /* NAV LIST */
@@ -136,10 +137,11 @@ header {
     position: fixed;
     top: 0;
     right: -100%;
+    z-index: 900;
     opacity: 0;
     width: 90%;
     height: 100vh;
-    background: #ffffff;
+    background: var(--base-primary);
     padding: 80px 40px;
     box-shadow: -6px 0px 7px 0px rgba(0,0,0,0.4);
     transition: all ease-in-out;
@@ -147,7 +149,7 @@ header {
 }
 
 .nav-list li {
-    margin-top: 20px;
+    margin-top: 40px;
     width: 100%;
     border-bottom: 1px solid #ccc;
 }
@@ -158,6 +160,14 @@ header {
     padding: 20px 0;
     display: inline-block;
     font-size: 1.25rem;
+    transition: all ease .3s;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    background: var(--base-primary);
+    border-radius: 4px;
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-contact-btn {
@@ -166,6 +176,12 @@ header {
     padding: 12px 25px;
     margin-top: 50px;
     font-size: 1.25rem;
+    text-align: center;
+    color: var(--txt-primary);
+    background: var(--btn-bg);
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: all ease .3s;
 }
 
 .contact-btn {
@@ -175,11 +191,58 @@ header {
     font-size: 1rem;
 }
 
-.menu-open {
-    background:rgba(0, 0, 0, 0.4);
+/* THEME CONTAINER */
+.mtheme-toggle-btn {
+    display: inline-block;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 150px;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.4);
 }
 
-/* THEME CONTAINER */
+.mobile-toggle-checkbox {
+    display: none;
+}
+
+.mobile-toggle-label {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+    background: var(--base);
+}
+
+.mobile-toggle-label svg {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+.mobile-toggle-label .moon-icon {
+    display: none;
+}   
+.darkmode .mobile-toggle-label .sun-icon {
+    display: none;
+}
+.darkmode .mobile-toggle-label .moon-icon {
+    display: block;
+}
+
+.mobile-toggle-checkbox:checked + .mobile-toggle-label {
+    background: #ffec70;
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
 .theme {
     display: none;
 }
@@ -409,7 +472,7 @@ header {
     background-size: cover;
     font-size: 2.25rem;
     letter-spacing: -3px;
-    color: var(--accent);
+    color: var(--txt-base);
     font-weight: 900;
 }
 
@@ -420,7 +483,7 @@ header {
 .skillCard-content h4 {
     font-size: 2.25rem;
     letter-spacing: -3px;
-    color: var(--accent);
+    color: var(--txt-base);
     font-weight: 900;
 }
 
@@ -558,7 +621,7 @@ body.darkmode .testimonial {
 /* END OF ABOUT ME SECTION */
 
 footer {
-    background: var(--base);
+    background: var(--accent);
     margin-top: clamp(150px, 20vw, 335px);
     position: relative;
     padding-bottom: 47px;
@@ -588,10 +651,13 @@ footer {
     font-size: clamp(0.5rem, 2.5vw, 1rem);
     line-height: 1.4;
     padding: 2rem 1rem;
+    flex: 1 1 70%;
+    max-width: 70%;
 }
 
 .footer-img {
-    width: clamp(135px, 20vw, 280px);
+    flex: 1 1 30%;
+    max-width: 30%;
     margin-left: -10px;
     -webkit-user-drag: none;
     position: absolute;
@@ -685,9 +751,6 @@ footer {
     .header-nav {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        position: static;
-        box-shadow: none;
     }
 
     .nav-contents {
@@ -700,12 +763,12 @@ footer {
         position: static;
         box-shadow: none;
         padding: 0;
-        width: auto;
+        width: fit-content;
         height: auto;
+        background: transparent;
     }
 
     .nav-list {
-        display: flex;
         flex-direction: row;
         align-items: center;
         gap: 30px;
@@ -725,9 +788,20 @@ footer {
     }
 
     .nav-links {
-        font-size: 1.25rem;
-        display: inline;
         padding: 0;
+        width: auto;
+        height: auto;
+        display: inline-block;
+        font-size: 1.25rem;
+        transition: all ease .3s;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-align: center;
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        opacity: 1;
     }
 
     .mobile-contact-btn {
@@ -735,6 +809,10 @@ footer {
     }
 
     .menu-btn {
+        display: none;
+    }
+
+    .mtheme-toggle-btn {
         display: none;
     }
 
@@ -795,6 +873,13 @@ footer {
         width: 52px;
         height: 52px;
     }
+
+    .social-icons {
+        width: 100%;
+    }
+    .portal-icon path {
+        fill: var(--base);
+    }
     /* END OF HEADER SECTION */
 
     .stats-contents {
@@ -844,7 +929,11 @@ footer {
     .zigzag-icon {
         display: inline-block;
         flex: 1 1 calc(50% - 30px);
-        max-width: calc(50% - 30px)
+        max-width: calc(50% - 30px);
+    }
+
+    .darkmode .zigzag-icon {
+        filter: invert(1);
     }
 
     .about-skills {
@@ -856,8 +945,6 @@ footer {
     .about-author {
         margin: 99px 70px 99px 0px;
     }
-
-    
 
     .acknowledgement-txt {
         width: 80%;
@@ -906,16 +993,13 @@ footer {
     }
 
     .portal, .hero-img {
-        display: block;
-    }
-
-    .portal-icon path {
-        fill: var(--accent);
+        display: flex;
     }
 
     .hero-img {
-        width: clamp(500px, 45vw, 693px);
-        height: clamp (650px, 30vw, 777px);
+        align-items: center;
+        justify-content: center;
+        width: clamp(450px, 45vw, 693px);
     }
 
     .hero-img img {
